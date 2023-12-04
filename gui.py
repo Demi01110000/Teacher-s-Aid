@@ -7,15 +7,31 @@ class MainApp:
     def __init__(self, data):
         self.root = tk.Tk()
         self.root.title("Vizualizace výkonu studentů")
-        self.root.geometry('500x250')
+        self.root.geometry('600x300')  # Adjusted window size
+
+        # Use a style to customize the appearance of widgets
+        self.style = ttk.Style()
+
+        # Change the color palette
+        self.style.theme_use('calm')  # Choose a different theme (e.g., 'clam', 'alt', 'default')
+
+        # Set the color of buttons
+        self.style.configure('TButton', font=('Arial', 12), foreground='black', background='#66c2ff')  # Change button color
+
+        # Add a title label
+        title_label = ttk.Label(self.root, text="Třídní Výkazy", font=('Arial', 16, 'bold'))
+        title_label.pack(pady=10)  # Add padding to separate the title from buttons
+
         # GUI components and layout go here
         # For simplicity, you can start with a basic window and a button to trigger visualization
 
-        self.btn_visualize = ttk.Button(self.root, text="Visualize Data", command=self.visualize_data)
-        self.btn_visualize.pack()
+        # Visualize Data Button
+        self.btn_visualize = ttk.Button(self.root, text="Vizualizace známek", command=self.visualize_data)
+        self.btn_visualize.pack(pady=10)
 
-        self.btn_show_table = ttk.Button(self.root, text="Show Data Table", command=self.show_data_table)
-        self.btn_show_table.pack()
+        # Show Data Table Button
+        self.btn_show_table = ttk.Button(self.root, text="Přehled třídy", command=self.show_data_table)
+        self.btn_show_table.pack(pady=10)
 
         self.data = data
 
@@ -30,4 +46,3 @@ class MainApp:
 
     def run(self):
         self.root.mainloop()
-

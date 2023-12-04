@@ -1,3 +1,5 @@
+# here we're making a table with all the data of the class
+
 import tkinter as tk
 from tkinter import ttk
 from data_handling import load_data
@@ -5,7 +7,7 @@ from data_handling import load_data
 class DataTableApp:
     def __init__(self, data):
         self.root = tk.Tk()
-        self.root.title("Data Table")
+        self.root.title("Přehled třídy")
 
         self.data = data
 
